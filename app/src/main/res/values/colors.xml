@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pureWhite">#FFFFFF</color>
+    <color name="pureBlack">#000000</color>
+
+    <color name="midnightBlue">#002E3F</color>
+    <color name="navyBlue">#044C64</color>
+    <color name="skyBlue">#C2D7DA</color>
+    
+    <color name="forestGreen">#008050</color>
+
+    <color name="blushRed">#B36458</color>
+
+    <color name="tangerineOrange">#E6A960</color>
+</resources>

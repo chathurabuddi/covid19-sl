@@ -1,0 +1,13 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/skyBlue</item>
+        <item name="colorPrimaryDark">@color/midnightBlue</item>
+        <item name="colorAccent">@color/midnightBlue</item>
+        <item name="android:statusBarColor">@color/skyBlue</item>
+        <item name="android:windowBackground">@color/skyBlue</item>
+        <item name="android:navigationBarColor">@color/midnightBlue</item>
+        <item name="android:textColorPrimary">@color/pureWhite</item>
+
+        <!--item name="fontFamily">@font/montserrat</item-->
+    </style>
+</resources>
