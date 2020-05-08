@@ -1,625 +1,590 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content_main"
+    <data>
+        <variable name="statisticsData" type="lk.gov.health.hpb.api.StatisticsData" />
+        <import type="lk.chathurabuddi.dashboard.corona.AppUtil"/>
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="match_parent"
+        android:background="@color/midnightBlue"
+        tools:context=".MainActivity">
 
-        <LinearLayout
-            android:id="@+id/title_group"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_main"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:elevation="1dp"
-            android:gravity="center"
-            android:onClick="openMenu"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@color/skyBlue">
 
             <ImageView
-                android:id="@+id/menu_handle"
+                android:id="@+id/clip_art"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4sp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/menu_handle"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="10dp"
+                android:elevation="0dp"
+                android:paddingTop="75sp"
+                android:src="@drawable/clip_art"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/txt_sri_lanka"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22sp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:includeFontPadding="false"
-                    android:text="SRILANKA"
-                    android:textColor="@color/blushRed"
-                    android:textSize="22sp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/txt_corona_virus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34sp"
-                    android:fontFamily="@font/montserrat_extra_bold"
-                    android:includeFontPadding="false"
-                    android:text="CORONAVIRUS"
-                    android:textColor="@color/midnightBlue"
-                    android:textSize="34sp" />
+                    <LinearLayout
+                        android:id="@+id/title_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:elevation="6dp"
+                        android:gravity="center|start"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/txt_dashboard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19sp"
-                    android:fontFamily="@font/montserrat_extra_bold"
-                    android:includeFontPadding="false"
-                    android:text="DASHBOARD"
-                    android:textColor="@color/midnightBlue"
-                    android:textSize="19sp" />
+                        <ImageView
+                            android:id="@+id/drawer_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/menu_handle" />
+
+                        <LinearLayout
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txt_sri_lanka"
+                                android:layout_width="wrap_content"
+                                android:layout_height="18sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:includeFontPadding="false"
+                                android:text="SRILANKA"
+                                android:textColor="@color/blushRed"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/txt_corona_virus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="28sp"
+                                android:fontFamily="@font/montserrat_extra_bold"
+                                android:includeFontPadding="false"
+                                android:text="CORONAVIRUS"
+                                android:textColor="@color/midnightBlue"
+                                android:textSize="28sp" />
+
+                            <TextView
+                                android:id="@+id/txt_dashboard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="22sp"
+                                android:fontFamily="@font/montserrat_extra_bold"
+                                android:includeFontPadding="false"
+                                android:text="DASHBOARD"
+                                android:textColor="@color/midnightBlue"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_symptoms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30sp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="36dp"
+                        android:adjustViewBounds="true"
+                        android:elevation="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/danger_btn_bk"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title_container" />
+
+                    <TextView
+                        android:id="@+id/txt_symptoms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="SYMPTOMS"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_symptoms"
+                        app:layout_constraintStart_toStartOf="@id/btn_symptoms"
+                        app:layout_constraintTop_toTopOf="@id/btn_symptoms" />
+
+                    <ImageView
+                        android:id="@+id/btn_prevention"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30sp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:elevation="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/success_btn_bk"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_symptoms" />
+
+                    <TextView
+                        android:id="@+id/txt_prevention"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="PREVENTION"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_prevention"
+                        app:layout_constraintStart_toStartOf="@id/btn_prevention"
+                        app:layout_constraintTop_toTopOf="@id/btn_prevention" />
+
+                    <TextView
+                        android:id="@+id/stat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="40dp"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/montserrat_extra_bold"
+                        android:includeFontPadding="false"
+                        android:text="STATISTICS"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_prevention" />
+
+                    <TextView
+                        android:id="@+id/stat_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:includeFontPadding="false"
+                        android:text="@{(statisticsData.updateDateTime==null?``:`As at `+statisticsData.updateDateTime+`\n`)+`swipe down to refresh the data`}"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/stat_title" />
+
+                    <ImageView
+                        android:id="@+id/curved_top"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/curved_top"
+                        app:layout_constraintBottom_toTopOf="@id/spacer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <View
+                        android:id="@+id/spacer"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:background="@color/midnightBlue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/stat_subtitle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/scroll_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/midnightBlue">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/content_scroll"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:paddingTop="5dp">
+
+                            <TextView
+                                android:id="@+id/local_stat_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="4dp"
+                                android:fontFamily="@font/montserrat_semi_bold"
+                                android:paddingHorizontal="22dp"
+                                android:text="LOCAL STATISTICS"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/local_row_one"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="5dp"
+                                android:elevation="4dp"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/local_stat_title">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_orange"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/active_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localActiveCases)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/active_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="ACTIVE"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_green"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/recovered_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localRecovered)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/recovered_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="RECOVERED"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_red"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/dead_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localDeaths)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/dead_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="DEATHS"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/local_row_two"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:elevation="4dp"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/local_row_one">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_blue"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/total_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localTotalCases)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/total_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="TOTAL"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_blue"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/suspected_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localNewCases)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/suspected_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="NEW CASES"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_blue"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/growth_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.localNewDeaths)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/growth_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="NEW DEATHS"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/global_stat_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="4dp"
+                                android:fontFamily="@font/montserrat_semi_bold"
+                                android:paddingHorizontal="22dp"
+                                android:paddingTop="25dp"
+                                android:text="GLOBAL STATISTICS"
+                                android:textColor="@color/pureWhite"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/local_row_two" />
+
+                            <LinearLayout
+                                android:id="@+id/global_row_one"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="5dp"
+                                android:elevation="4dp"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/global_stat_title">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_orange"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/global_active_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.globalTotalCases-statisticsData.globalRecovered)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/global_active_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="ACTIVE"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_green"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/global_recovered_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.globalRecovered)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/global_recovered_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="RECOVERED"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/stat_widget_red"
+                                    android:orientation="vertical"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="14dp">
+
+                                    <TextView
+                                        android:id="@+id/global_dead_count"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="@{AppUtil.format(statisticsData.globalDeaths)}"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/global_dead_txt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:text="DEATHS"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/pureWhite"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.core.widget.NestedScrollView>
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/clip_art"
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:elevation="1dp"
-            android:src="@drawable/clip_art"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_group" />
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/menu_drawer" />
 
-        <ImageView
-            android:id="@+id/btn_symptoms"
-            android:layout_width="wrap_content"
-            android:layout_height="30sp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="36dp"
-            android:adjustViewBounds="true"
-            android:elevation="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/danger_btn_bk"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_group" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:text="SYMPTOMS"
-            android:textColor="@color/pureWhite"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_symptoms"
-            app:layout_constraintStart_toStartOf="@id/btn_symptoms"
-            app:layout_constraintTop_toTopOf="@id/btn_symptoms" />
-
-        <ImageView
-            android:id="@+id/btn_prevention"
-            android:layout_width="wrap_content"
-            android:layout_height="30sp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="10dp"
-            android:adjustViewBounds="true"
-            android:elevation="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/success_btn_bk"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_symptoms" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:text="PREVENTION"
-            android:textColor="@color/pureWhite"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_prevention"
-            app:layout_constraintStart_toStartOf="@id/btn_prevention"
-            app:layout_constraintTop_toTopOf="@id/btn_prevention" />
-
-        <ImageView
-            android:id="@+id/curved_top"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/curved_top"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_prevention" />
-
-        <ImageView
-            android:id="@+id/ic_no_treatment"
-            android:layout_width="wrap_content"
-            android:layout_height="60sp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="20dp"
-            android:adjustViewBounds="true"
-            android:elevation="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/no_tretments"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/curved_top" />
-
-        <TextView
-            android:id="@+id/stat_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="46dp"
-            android:elevation="4dp"
-            android:fontFamily="@font/montserrat_extra_bold"
-            android:includeFontPadding="false"
-            android:text="STATISTICS"
-            android:textColor="@color/pureWhite"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ic_no_treatment" />
-
-        <TextView
-            android:id="@+id/stat_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:elevation="4dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:includeFontPadding="false"
-            android:text="Data fetched from \nHealth Promotion Bureau, Sri Lanka"
-            android:textColor="@color/pureWhite"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/stat_title" />
-
-        <LinearLayout
-            android:id="@+id/local_row_one"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="25dp"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/stat_subtitle">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_green">
-                <TextView
-                    android:id="@+id/recovered_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="22"/>
-                <TextView
-                    android:id="@+id/recovered_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="RECOVERED"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_orange">
-                <TextView
-                    android:id="@+id/active_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="122"/>
-                <TextView
-                    android:id="@+id/active_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="ACTIVE"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_red">
-                <TextView
-                    android:id="@+id/dead_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="3"/>
-                <TextView
-                    android:id="@+id/dead_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="DEATHS"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/local_row_two"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="8dp"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/local_row_one">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/total_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="146"/>
-                <TextView
-                    android:id="@+id/total_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="TOTAL"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/suspected_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="122"/>
-                <TextView
-                    android:id="@+id/suspected_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="SUSPECTED"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/growth_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="17.25%"/>
-                <TextView
-                    android:id="@+id/growth_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="GROWTH"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/global_stat_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GLOBAL STATISTICS"
-            app:layout_constraintTop_toBottomOf="@id/local_row_two"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/pureWhite"
-            android:elevation="4dp"
-            android:textSize="12sp"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:paddingStart="22dp"
-            android:paddingTop="25dp"/>
-
-        <LinearLayout
-            android:id="@+id/global_row_one"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="5dp"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/global_stat_title">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_green">
-                <TextView
-                    android:id="@+id/global_recovered_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="22"/>
-                <TextView
-                    android:id="@+id/global_recovered_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="RECOVERED"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_orange">
-                <TextView
-                    android:id="@+id/global_active_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="122"/>
-                <TextView
-                    android:id="@+id/global_active_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="ACTIVE"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_red">
-                <TextView
-                    android:id="@+id/global_dead_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="3"/>
-                <TextView
-                    android:id="@+id/global_dead_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="DEATHS"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/global_row_two"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="8dp"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/global_row_one">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/global_total_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="146"/>
-                <TextView
-                    android:id="@+id/global_total_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="TOTAL"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/global_suspected_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="122"/>
-                <TextView
-                    android:id="@+id/global_suspected_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="SUSPECTED"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="4dp"
-                android:layout_weight="1"
-                android:paddingTop="10dp"
-                android:paddingBottom="14dp"
-                android:background="@drawable/stat_widget_blue">
-                <TextView
-                    android:id="@+id/global_growth_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    android:text="17.25%"/>
-                <TextView
-                    android:id="@+id/global_growth_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="12sp"
-                    android:text="GROWTH"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/midnightBlue"
-            android:elevation="3dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/curved_top" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/menu_drawer" />
-
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
