@@ -10,4 +10,14 @@
 
         <!--item name="fontFamily">@font/montserrat</item-->
     </style>
+
+    <style name="nav_drawer_menu_item">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:height">48dp</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/pureWhite</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
 </resources>
