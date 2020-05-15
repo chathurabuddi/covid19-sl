@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">COVID-19 SL</string>
+
+    <string name="navigation_drawer_open">Open Navigation Panel</string>
+    <string name="navigation_drawer_close">Close Navigation Panel</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="about">About</string>
 </resources>

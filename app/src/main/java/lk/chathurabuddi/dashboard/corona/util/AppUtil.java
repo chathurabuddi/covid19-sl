@@ -1,4 +1,4 @@
-package lk.chathurabuddi.dashboard.corona;
+package lk.chathurabuddi.dashboard.corona.util;
 
 import java.util.Locale;
 
