@@ -8,11 +8,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.databinding.DataBindingUtil;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import lk.chathurabuddi.dashboard.corona.databinding.ActivityMainBinding;
+import lk.chathurabuddi.dashboard.corona.fragment.ScreenFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             R.layout.activity_main
         );
         this.inflateViews(binding);
+        this.displayFragment(binding, ScreenFragment.DASHBOARD);
     }
 
     private void inflateViews(@NonNull final ActivityMainBinding binding) {
@@ -42,20 +43,29 @@ public class MainActivity extends AppCompatActivity {
         binding.drawerLayout.addDrawerListener(drawerToggle);
         binding.drawerIcon.setOnClickListener(v -> binding.drawerLayout.openDrawer(binding.navView));
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupWithNavController(binding.navView, navController);
         this.setNabBarItemListeners(binding);
     }
 
     private void setNabBarItemListeners(@NonNull final ActivityMainBinding binding) {
         binding.menuItemDashboard.setOnClickListener(v -> {
-            Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.navigation_dashboard);
-            binding.drawerLayout.closeDrawer(GravityCompat.START);
+            displayFragment(binding, ScreenFragment.DASHBOARD);
         });
 
         binding.menuItemAbout.setOnClickListener(v -> {
-            Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.navigation_about);
-            binding.drawerLayout.closeDrawer(GravityCompat.START);
+            displayFragment(binding, ScreenFragment.ABOUT);
         });
+    }
+
+    private void displayFragment(@NonNull final ActivityMainBinding binding, ScreenFragment screenFragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment currentFragment = fragmentManager.findFragmentById(binding.navHost.getId());
+        if (currentFragment == null || !screenFragment.name().equals(currentFragment.getTag())) {
+            fragmentManager.beginTransaction().replace(
+                    binding.navHost.getId(),
+                    screenFragment.getInstance(),
+                    screenFragment.name()
+            ).commit();
+        }
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
     }
 }
