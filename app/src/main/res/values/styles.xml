@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/midnightBlue</item>
         <item name="colorPrimaryDark">@color/midnightBlue</item>
@@ -7,8 +8,10 @@
         <item name="android:windowBackground">@color/midnightBlue</item>
         <item name="android:navigationBarColor">@color/midnightBlue</item>
         <item name="android:textColorPrimary">@color/pureWhite</item>
+    </style>
 
-        <!--item name="fontFamily">@font/montserrat</item-->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/background_splash</item>
     </style>
 
     <style name="nav_drawer_menu_item">
