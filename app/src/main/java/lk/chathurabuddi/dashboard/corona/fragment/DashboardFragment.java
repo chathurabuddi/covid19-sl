@@ -1,5 +1,6 @@
 package lk.chathurabuddi.dashboard.corona.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,13 +19,15 @@ import androidx.fragment.app.Fragment;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import lk.chathurabuddi.dashboard.corona.MainActivity;
 import lk.chathurabuddi.dashboard.corona.R;
 import lk.chathurabuddi.dashboard.corona.databinding.FragmentDashboardBinding;
 import lk.gov.health.hpb.api.Statistics;
+import okhttp3.Cache;
+import okhttp3.CacheControl;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -34,10 +37,23 @@ import okhttp3.Response;
 public class DashboardFragment extends Fragment {
 
     private static final String HPB_API_URL = "https://hpb.health.gov.lk/api/get-current-statistical";
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    private static final long FAB_ANIMATING_DURATION = 1000;
+    private static final String LOG_TAG = DashboardFragment.class.getSimpleName();
+    private static final long   FAB_ANIMATING_DURATION = 1000;
+    private static final long   HTTP_CONNECT_TIMEOUT = 30;
+    private static final long   HTTP_READ_TIMEOUT = 30;
+    private static final int    HTTP_CACHE_MAX_AGE = 10;
+    private static final String HTTP_CACHE_DIR = "http-cache";
+    private static final int    HTTP_CACHE_DIR_SIZE = 2 * 1024 * 1024;
+
+    private Context APP_CONTEXT;
 
     public DashboardFragment() { }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        APP_CONTEXT = context.getApplicationContext();
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,16 +70,34 @@ public class DashboardFragment extends Fragment {
 
         new OkHttpClient()
             .newBuilder()
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
+            .readTimeout(HTTP_READ_TIMEOUT, TimeUnit.SECONDS)
+            .addNetworkInterceptor(chain -> {
+                Response response = chain.proceed(chain.request());
+                return response.newBuilder()
+                    .removeHeader("Pragma")
+                    .removeHeader("Cache-Control")
+                    .header(
+                    "Cache-Control",
+                        new CacheControl
+                            .Builder().maxAge(HTTP_CACHE_MAX_AGE, TimeUnit.MINUTES)
+                            .build().toString())
+                    .build();
+            })
+            .cache(new Cache(
+                new File(APP_CONTEXT.getCacheDir(), HTTP_CACHE_DIR),
+                HTTP_CACHE_DIR_SIZE
+            ))
             .build()
             .newCall(new Request.Builder().url(HPB_API_URL).build())
             .enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-                    binding.setStatisticsData(new Gson().fromJson(
-                        response.body().string(), Statistics.class
-                    ).getData());
+                    if (response.body() != null) {
+                        binding.setStatisticsData(new Gson().fromJson(
+                            response.body().string(), Statistics.class
+                        ).getData());
+                    }
                     DashboardFragment.this.stopLoadingAnimations(binding);
                 }
                 @Override
