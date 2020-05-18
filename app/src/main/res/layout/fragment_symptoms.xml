@@ -27,8 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/symptoms_art"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/symptoms_title"/>
 
     <View
@@ -62,10 +62,10 @@
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingVertical="25dp"
-        android:paddingHorizontal="30dp"
         android:background="@color/midnightBlue"
         android:overScrollMode="always"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="25dp"
         app:layout_constraintBottom_toBottomOf="@id/bottom_canvas"
         app:layout_constraintEnd_toEndOf="@id/bottom_canvas"
         app:layout_constraintStart_toStartOf="@+id/bottom_canvas"
@@ -75,14 +75,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_medium"
-            android:textSize="12sp"
+            android:text="@string/symptoms_description"
             android:textColor="@color/pureWhite"
-            android:text="@string/symptoms_description" />
-
+            android:textSize="12sp" />
     </androidx.core.widget.NestedScrollView>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
