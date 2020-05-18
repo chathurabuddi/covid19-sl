@@ -10,6 +10,18 @@ public enum ScreenFragment {
             return new DashboardFragment();
         }
     },
+    SYMPTOMS{
+        @Override
+        public Fragment getInstance() {
+            return new SymptomsFragment();
+        }
+    },
+    PREVENTION{
+        @Override
+        public Fragment getInstance() {
+            return null;
+        }
+    },
     ABOUT{
         @Override
         public Fragment getInstance() {

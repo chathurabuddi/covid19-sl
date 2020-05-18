@@ -6,4 +6,23 @@
 
     <string name="dashboard">Dashboard</string>
     <string name="about">About</string>
+    <string name="symptoms_description">
+        Having these symptoms doesn’t mean you have COVID-19.
+        However, since these are common symptoms of the COVID-19 infection,
+        for the sake of those close to you, please follow the measures mentioned below.
+        Understand that this is part of your national responsibility.\n
+        \nDo not leave home for any reason other than seeking medical advice.\n
+        \nIf possible, use a separate room for yourself.\n
+        \nAlways keep a distance of at least one meter between yourself and others at home.\n
+        \nIf possible, use a separate washroom. If this is not possible, always wash the taps, doorknobs etc. after use with soap and water.\n
+        \nDo not encourage visitors to the house.\n
+        \nFrequently wash your hands for at least 20 seconds with soap and water. Ask your family members to do the same.\n
+        \nUse separate cups, plates, towels, bedspreads etc. Wash them separately with soap and water.\n
+        \nCover your mouth and nose with a disposable tissue or the inside of your elbow when coughing and sneezing. Safely dispose of the used tissues.\n
+        \nDo not reuse face masks and gloves etc. Dispose them in a garbage bin with a lid.\n
+        \nIf you have returned from abroad or associated someone who has COVID-19 or someone suspected of being infected within the past 14 days, immediately report to the Public Health Inspector (PHI) or the Medical Officer of Health (MOH) of your area.\n
+        \nCall 1999 hotline for medical and other advice regarding Covid-19.\n
+        \nCall 1990 for ambulance facilities in case of an emergency.
+    </string>
+
 </resources>
