@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import lk.chathurabuddi.dashboard.corona.BuildConfig;
 import lk.chathurabuddi.dashboard.corona.R;
 
 public class AboutFragment extends Fragment {
@@ -40,5 +42,7 @@ public class AboutFragment extends Fragment {
                 ).commit();
             }
         });
+
+        ((TextView)view.findViewById(R.id.version_tag)).setText(BuildConfig.VERSION_NAME);
     }
 }
