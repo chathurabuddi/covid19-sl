@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         Fragment currentFragment = fragmentManager.findFragmentById(binding.navHost.getId());
         if (currentFragment == null || !screenFragment.name().equals(currentFragment.getTag())) {
             fragmentManager.beginTransaction().replace(
-                    binding.navHost.getId(),
-                    screenFragment.getInstance(),
-                    screenFragment.name()
+                binding.navHost.getId(),
+                screenFragment.getInstance(),
+                screenFragment.name()
             ).commit();
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START);
