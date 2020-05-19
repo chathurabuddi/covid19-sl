@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/symptoms_art"
+        android:id="@+id/prevention_art"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/prevention_art"
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/symptoms_art"/>
+        app:layout_constraintTop_toBottomOf="@id/prevention_art"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
