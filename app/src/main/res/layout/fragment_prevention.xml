@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -64,7 +65,7 @@
         android:layout_height="0dp"
         android:background="@color/midnightBlue"
         android:overScrollMode="always"
-        android:paddingBottom="25dp"
+        android:paddingVertical="25dp"
         app:layout_constraintBottom_toBottomOf="@id/bottom_canvas"
         app:layout_constraintEnd_toEndOf="@id/bottom_canvas"
         app:layout_constraintHorizontal_bias="1.0"
@@ -81,16 +82,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="25dp"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:gravity="center|top"
                 android:text="BASIC PREVENTIVE MEASURES"
                 android:textAlignment="center"
                 android:textColor="@color/pureWhite"
                 android:textSize="12sp"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <ImageView
                 android:id="@+id/wash_hands_img"
@@ -244,9 +244,9 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:text="PREVENTION AT WORKPLACE"
+                android:textAlignment="center"
                 android:textColor="@color/pureWhite"
                 android:textSize="12sp"
-                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/stay_home_txt"/>
