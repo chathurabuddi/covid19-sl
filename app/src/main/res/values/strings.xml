@@ -7,7 +7,15 @@
     <string name="dashboard">Dashboard</string>
     <string name="about">About</string>
     <string name="symptoms_description">
-        Having these symptoms doesn’t mean you have COVID-19.
+        The Coronavirus pandemic has erupted in Sri Lanka and here are the symptoms one should look
+        out for if they suspect they have contacted the disease.\n\n
+        1. Cough\n
+        2. Fever\n
+        3. Shortness of Breath\n
+        4. Headache\n
+        5. Runny Nose\n
+        6. Sore Throat\n
+        \nHaving these symptoms doesn’t mean you have COVID-19.
         However, since these are common symptoms of the COVID-19 infection,
         for the sake of those close to you, please follow the measures mentioned below.
         Understand that this is part of your national responsibility.\n
