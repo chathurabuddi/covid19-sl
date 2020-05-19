@@ -32,5 +32,19 @@
         \nCall 1999 hotline for medical and other advice regarding Covid-19.\n
         \nCall 1990 for ambulance facilities in case of an emergency.
     </string>
+    <string name="workplace_prevention_description">
+        We spend more time at work places. So we need to care more about how to protect places that
+        work against COVID-19. Follow these instructions to keep your work safe.\n
+        \nIf anyone shows light symptoms such as fever, cough or cold, advise him not to go to work
+        until it is fully healed. If possible, encourage me to work from home.\n
+        \nClean the equipment used by more than one person like door handles, phone receivers,
+        table surface, stapler.\n
+        \nWash your hands well often using soap. Avoid touching your face, mouth, nose and eyes.
+        COVID-19 virus is usually spread through contact.\n
+        \nAvoid increasing the crowd as much as possible. Snooze meetings and follow modern
+        communication methods such as video conferencing and group calling.\n
+        \nIf you reduce the chance to spread the corona virus at your workplace, you may also reduce
+        the chance of immune to your beloved family members.\n
+    </string>
 
 </resources>
