@@ -19,7 +19,7 @@ public enum ScreenFragment {
     PREVENTION{
         @Override
         public Fragment getInstance() {
-            return null;
+            return new PreventionFragment();
         }
     },
     ABOUT{

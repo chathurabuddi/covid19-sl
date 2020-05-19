@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
             displayFragment(binding, ScreenFragment.SYMPTOMS);
         });
 
+        binding.menuItemPrevention.setOnClickListener(v -> {
+            displayFragment(binding, ScreenFragment.PREVENTION);
+        });
+
         binding.menuItemAbout.setOnClickListener(v -> {
             displayFragment(binding, ScreenFragment.ABOUT);
         });
