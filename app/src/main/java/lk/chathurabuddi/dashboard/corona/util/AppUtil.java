@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class AppUtil {
     public static String format(long number) {
-        final long startValue = 1000;
+        final long startValue = 10000;
         if (number < 0 ? -startValue < number : number < startValue){
             return String.valueOf(number);
         }
