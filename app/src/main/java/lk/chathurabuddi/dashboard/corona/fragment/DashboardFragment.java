@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
@@ -118,6 +119,27 @@ public class DashboardFragment extends Fragment {
         binding.fab.setOnClickListener(v -> {
             this.updateStatistics(binding);
         });
+
+        binding.btnSymptoms.setOnClickListener(v -> {
+            displayFragment(ScreenFragment.SYMPTOMS);
+        });
+
+        binding.btnPrevention.setOnClickListener(v -> {
+            displayFragment(ScreenFragment.PREVENTION);
+        });
+    }
+
+    private void displayFragment(ScreenFragment screenFragment) {
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager != null) {
+            fragmentManager.beginTransaction().setCustomAnimations(
+                R.anim.slide_in_left, R.anim.slide_out_right
+            ).replace(
+                R.id.nav_host,
+                screenFragment.getInstance(),
+                screenFragment.name()
+            ).commit();
+        }
     }
 
     private void showLoadingAnimations(@NonNull final FragmentDashboardBinding binding) {
