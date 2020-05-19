@@ -8,81 +8,39 @@
     android:background="@color/skyBlue"
     tools:context=".fragment.AboutFragment">
 
-    <ImageView
-        android:id="@+id/app_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="80dp"
-        android:contentDescription="App Icon"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:paddingTop="18sp"
+        android:text="ABOUT"
+        android:textColor="@color/midnightBlue"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_sri_lanka"
+    <ImageView
+        android:id="@+id/about_art"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:includeFontPadding="false"
-        android:text="SRILANKA"
-        android:textColor="@color/blushRed"
-        android:textSize="14dp"
+        android:src="@drawable/about_art"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_icon" />
-
-    <TextView
-        android:id="@+id/txt_corona_virus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_extra_bold"
-        android:includeFontPadding="false"
-        android:text="CORONAVIRUS"
-        android:textColor="@color/midnightBlue"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_sri_lanka" />
-
-    <TextView
-        android:id="@+id/txt_dashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_extra_bold"
-        android:includeFontPadding="false"
-        android:text="DASHBOARD"
-        android:textColor="@color/midnightBlue"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_corona_virus" />
-
-    <TextView
-        android:id="@+id/version_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@color/midnightBlue"
-        android:fontFamily="@font/montserrat_regular"
-        android:paddingHorizontal="8dp"
-        android:text="1.0.0"
-        android:textColor="@color/pureWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_dashboard" />
+        app:layout_constraintTop_toBottomOf="@id/about_title" />
 
     <View
         android:id="@+id/bottom_canvas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
         android:background="@color/midnightBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/version_tag" />
+        app:layout_constraintTop_toBottomOf="@id/about_art" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -130,6 +88,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/version_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:textColor="@color/pureWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/copyright" />
+
+            <TextView
                 android:id="@+id/design_develop_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +109,7 @@
                 android:textColor="@color/pureWhite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/copyright" />
+                app:layout_constraintTop_toBottomOf="@id/version_tag" />
 
             <TextView
                 android:id="@+id/design_develop"
