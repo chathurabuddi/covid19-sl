@@ -36,7 +36,7 @@
         android:id="@+id/bottom_canvas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/midnightBlue"
+        android:background="@drawable/bottom_canves_bk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,6 @@
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/midnightBlue"
         android:overScrollMode="always"
         android:paddingVertical="25dp"
         app:layout_constraintBottom_toBottomOf="@id/bottom_canvas"
@@ -90,7 +89,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/wash_hands_img"
@@ -249,7 +248,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/stay_home_txt"/>
+                app:layout_constraintTop_toBottomOf="@id/stay_home_txt" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -262,7 +261,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/workplace_title"/>
+                app:layout_constraintTop_toBottomOf="@id/workplace_title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
