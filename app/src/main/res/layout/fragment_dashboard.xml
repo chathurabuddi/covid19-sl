@@ -21,754 +21,745 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="10dp"
+            android:contentDescription="Masked People"
             android:elevation="0dp"
             android:paddingTop="75sp"
             android:src="@drawable/clip_art"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+        <TextView
+            android:id="@+id/txt_sri_lanka"
+            android:layout_width="wrap_content"
+            android:layout_height="18sp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:includeFontPadding="false"
+            android:text="SRILANKA"
+            android:textColor="@color/blushRed"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_corona_virus"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_marginStart="22dp"
+            android:fontFamily="@font/montserrat_extra_bold"
+            android:includeFontPadding="false"
+            android:text="CORONAVIRUS"
+            android:textColor="@color/midnightBlue"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sri_lanka" />
+
+        <TextView
+            android:id="@+id/txt_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="22sp"
+            android:layout_marginStart="22dp"
+            android:fontFamily="@font/montserrat_extra_bold"
+            android:includeFontPadding="false"
+            android:text="DASHBOARD"
+            android:textColor="@color/midnightBlue"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_corona_virus" />
+
+        <ImageView
+            android:id="@+id/btn_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30sp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="36dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="Symptoms Button Background"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:foreground="@drawable/white_gradient_foreground"
+            android:scaleType="centerCrop"
+            android:src="@drawable/danger_btn_bk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_dashboard" />
+
+        <TextView
+            android:id="@+id/txt_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:elevation="6dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="SYMPTOMS"
+            android:textColor="@color/pureWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_symptoms"
+            app:layout_constraintStart_toStartOf="@id/btn_symptoms"
+            app:layout_constraintTop_toTopOf="@id/btn_symptoms" />
+
+        <ImageView
+            android:id="@+id/btn_prevention"
+            android:layout_width="wrap_content"
+            android:layout_height="30sp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="Prevention Button Background"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:foreground="@drawable/white_gradient_foreground"
+            android:scaleType="centerCrop"
+            android:src="@drawable/success_btn_bk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_symptoms" />
+
+        <TextView
+            android:id="@+id/txt_prevention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:elevation="6dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="PREVENTION"
+            android:textColor="@color/pureWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_prevention"
+            app:layout_constraintStart_toStartOf="@id/btn_prevention"
+            app:layout_constraintTop_toTopOf="@id/btn_prevention" />
+
+        <TextView
+            android:id="@+id/stat_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="40dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/montserrat_extra_bold"
+            android:includeFontPadding="false"
+            android:text="STATISTICS"
+            android:textColor="@color/pureWhite"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_prevention" />
+
+        <TextView
+            android:id="@+id/stat_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:includeFontPadding="false"
+            android:text="@{(statisticsData.updateDateTime==null?``:`As at `+statisticsData.updateDateTime)}"
+            android:textColor="@color/pureWhite"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stat_title" />
+
+        <ImageView
+            android:id="@+id/curved_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/curved_top"
+            app:layout_constraintBottom_toTopOf="@id/spacer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/midnightBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stat_subtitle" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/navyBlue"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/sync_icon"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@id/spacer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/midnightBlue" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/midnightBlue"
+            android:overScrollMode="always"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spacer">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/header"
+                android:id="@+id/content_scroll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0dp"
+                android:paddingVertical="5dp">
 
-                <LinearLayout
-                    android:id="@+id/title_container"
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/placeholder"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:alpha="0.8"
+                    android:elevation="5dp"
+                    app:duration="500"
+                    app:layout_constraintBottom_toBottomOf="@id/stat_container"
+                    app:layout_constraintEnd_toEndOf="@id/stat_container"
+                    app:layout_constraintStart_toStartOf="@id/stat_container"
+                    app:layout_constraintTop_toTopOf="@id/stat_container">
+                    <include layout="@layout/placeholder_stat" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/stat_container"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:elevation="6dp"
-                    android:gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:elevation="4dp"
+                    android:visibility="invisible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <LinearLayout
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="22dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txt_sri_lanka"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18sp"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:includeFontPadding="false"
-                            android:text="SRILANKA"
-                            android:textColor="@color/blushRed"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/txt_corona_virus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="28sp"
-                            android:fontFamily="@font/montserrat_extra_bold"
-                            android:includeFontPadding="false"
-                            android:text="CORONAVIRUS"
-                            android:textColor="@color/midnightBlue"
-                            android:textSize="28sp" />
-
-                        <TextView
-                            android:id="@+id/txt_dashboard"
-                            android:layout_width="wrap_content"
-                            android:layout_height="22sp"
-                            android:fontFamily="@font/montserrat_extra_bold"
-                            android:includeFontPadding="false"
-                            android:text="DASHBOARD"
-                            android:textColor="@color/midnightBlue"
-                            android:textSize="22sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/btn_symptoms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30sp"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="36dp"
-                    android:adjustViewBounds="true"
-                    android:clickable="true"
-                    android:elevation="5dp"
-                    android:focusable="true"
-                    android:foreground="@drawable/white_gradient_foreground"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/danger_btn_bk"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/title_container" />
-
-                <TextView
-                    android:id="@+id/txt_symptoms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:elevation="6dp"
-                    android:fontFamily="@font/montserrat_semi_bold"
-                    android:text="SYMPTOMS"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btn_symptoms"
-                    app:layout_constraintStart_toStartOf="@id/btn_symptoms"
-                    app:layout_constraintTop_toTopOf="@id/btn_symptoms" />
-
-                <ImageView
-                    android:id="@+id/btn_prevention"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30sp"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="10dp"
-                    android:adjustViewBounds="true"
-                    android:clickable="true"
-                    android:elevation="5dp"
-                    android:focusable="true"
-                    android:foreground="@drawable/white_gradient_foreground"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/success_btn_bk"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_symptoms" />
-
-                <TextView
-                    android:id="@+id/txt_prevention"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:elevation="6dp"
-                    android:fontFamily="@font/montserrat_semi_bold"
-                    android:text="PREVENTION"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btn_prevention"
-                    app:layout_constraintStart_toStartOf="@id/btn_prevention"
-                    app:layout_constraintTop_toTopOf="@id/btn_prevention" />
-
-                <TextView
-                    android:id="@+id/stat_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="40dp"
-                    android:elevation="4dp"
-                    android:fontFamily="@font/montserrat_extra_bold"
-                    android:includeFontPadding="false"
-                    android:text="STATISTICS"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_prevention" />
-
-                <TextView
-                    android:id="@+id/stat_subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:elevation="4dp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:includeFontPadding="false"
-                    android:text="@{(statisticsData.updateDateTime==null?``:`As at `+statisticsData.updateDateTime)}"
-                    android:textColor="@color/pureWhite"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/stat_title" />
-
-                <ImageView
-                    android:id="@+id/curved_top"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:elevation="2dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/curved_top"
-                    app:layout_constraintBottom_toTopOf="@id/spacer"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <View
-                    android:id="@+id/spacer"
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:background="@color/midnightBlue"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/stat_subtitle" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="5dp"
-                    android:backgroundTint="@color/navyBlue"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@drawable/sync_icon"
-                    app:elevation="2dp"
-                    app:fabSize="mini"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:rippleColor="@color/midnightBlue" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.core.widget.NestedScrollView
-                android:id="@+id/scroll_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/midnightBlue"
-                android:overScrollMode="always">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/content_scroll"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:paddingVertical="5dp">
-
-                    <com.facebook.shimmer.ShimmerFrameLayout
-                        android:id="@+id/placeholder"
+                    <TextView
+                        android:id="@+id/local_stat_title"
                         android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:alpha="0.8"
-                        android:elevation="5dp"
-                        app:duration="500"
-                        app:layout_constraintBottom_toBottomOf="@id/stat_container"
-                        app:layout_constraintEnd_toEndOf="@id/stat_container"
-                        app:layout_constraintStart_toStartOf="@id/stat_container"
-                        app:layout_constraintTop_toTopOf="@id/stat_container">
-
-                        <include layout="@layout/placeholder" />
-
-                    </com.facebook.shimmer.ShimmerFrameLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="LOCAL STATISTICS"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/stat_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:elevation="4dp"
-                        android:visibility="invisible"
+                        android:id="@+id/active_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_orange"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/recovered_stat"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/local_stat_title">
 
                         <TextView
-                            android:id="@+id/local_stat_title"
+                            android:id="@+id/active_count_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:elevation="4dp"
-                            android:fontFamily="@font/montserrat_semi_bold"
-                            android:paddingHorizontal="22dp"
-                            android:text="LOCAL STATISTICS"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localActiveCases)}"
                             android:textColor="@color/pureWhite"
-                            android:textSize="12sp"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <LinearLayout
-                            android:id="@+id/local_row_one"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="18dp"
-                            android:layout_marginTop="5dp"
-                            android:elevation="4dp"
-                            android:orientation="horizontal"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/local_stat_title">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_orange"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/active_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localActiveCases)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/active_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="ACTIVE"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/active_count" />
-
-                                <ImageView
-                                    android:id="@+id/imageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/active_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_green"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/recovered_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localRecovered)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/recovered_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="RECOVERED"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/recovered_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/recovered_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_red"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/dead_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localDeaths)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/dead_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="DEATHS"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/dead_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/deaths_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/local_row_two"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="18dp"
-                            android:layout_marginTop="8dp"
-                            android:elevation="4dp"
-                            android:orientation="horizontal"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/local_row_one">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_blue"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/total_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localTotalCases)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/total_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="TOTAL"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/total_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/virus_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_blue"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/new_case_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localNewCases)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/new_case_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="NEW CASES"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/new_case_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/virus_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_blue"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:orientation="vertical"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/new_death_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localNewDeaths)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/new_death_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="NEW DEATHS"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/new_death_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/virus_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        </LinearLayout>
-
                         <TextView
-                            android:id="@+id/global_stat_title"
+                            android:id="@+id/active_txt_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:elevation="4dp"
-                            android:fontFamily="@font/montserrat_semi_bold"
-                            android:paddingHorizontal="22dp"
-                            android:paddingTop="25dp"
-                            android:text="GLOBAL STATISTICS"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="ACTIVE"
                             android:textColor="@color/pureWhite"
                             android:textSize="12sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/local_row_two" />
-
-                        <LinearLayout
-                            android:id="@+id/global_row_one"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="18dp"
-                            android:layout_marginTop="5dp"
-                            android:elevation="4dp"
-                            android:orientation="horizontal"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/global_stat_title">
+                            app:layout_constraintTop_toBottomOf="@id/active_count_1" />
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_orange"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/global_active_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalTotalCases - statisticsData.globalRecovered - statisticsData.globalDeaths)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/global_active_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="ACTIVE"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/global_active_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/active_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_green"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/global_recovered_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalRecovered)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/global_recovered_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="RECOVERED"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/global_recovered_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/recovered_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/stat_widget_red"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:padding="2dp">
-
-                                <TextView
-                                    android:id="@+id/global_dead_count"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalDeaths)}"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="18sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/global_dead_txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:elevation="2dp"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:paddingBottom="12dp"
-                                    android:text="DEATHS"
-                                    android:textColor="@color/pureWhite"
-                                    android:textSize="12sp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/global_dead_count" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="0dp"
-                                    android:elevation="1dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/deaths_icon"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/imageView_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/active_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.core.widget.NestedScrollView>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/recovered_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/dead_stat"
+                        app:layout_constraintStart_toEndOf="@id/active_stat"
+                        app:layout_constraintTop_toBottomOf="@id/local_stat_title">
 
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/recovered_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localRecovered)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/recovered_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="RECOVERED"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/recovered_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/recovered_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/dead_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="22dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/recovered_stat"
+                        app:layout_constraintTop_toBottomOf="@id/local_stat_title">
+
+                        <TextView
+                            android:id="@+id/dead_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localDeaths)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/dead_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="DEATHS"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/dead_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/deaths_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/total_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_blue"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/new_stat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/active_stat">
+
+                        <TextView
+                            android:id="@+id/total_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localTotalCases)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/total_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="TOTAL"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/total_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/virus_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/new_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_blue"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/new_death_stat"
+                        app:layout_constraintStart_toEndOf="@id/total_stat"
+                        app:layout_constraintTop_toBottomOf="@id/recovered_stat">
+
+                        <TextView
+                            android:id="@+id/new_case_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localNewCases)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/new_case_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="NEW CASES"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/new_case_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/virus_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/new_death_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="22dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_blue"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/new_stat"
+                        app:layout_constraintTop_toBottomOf="@id/dead_stat">
+
+                        <TextView
+                            android:id="@+id/new_death_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.localNewDeaths)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/new_death_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="NEW DEATHS"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/new_death_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/virus_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/global_stat_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginTop="25dp"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="GLOBAL STATISTICS"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/total_stat" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/global_active_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_orange"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/global_recovered_stat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/global_stat_title">
+
+                        <TextView
+                            android:id="@+id/global_active_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.globalTotalCases - statisticsData.globalRecovered - statisticsData.globalDeaths)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/global_active_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="ACTIVE"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/global_active_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/active_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/global_recovered_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toStartOf="@id/global_dead_stat"
+                        app:layout_constraintStart_toEndOf="@id/global_active_stat"
+                        app:layout_constraintTop_toBottomOf="@id/global_stat_title">
+
+                        <TextView
+                            android:id="@+id/global_recovered_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.globalRecovered)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/global_recovered_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="RECOVERED"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/global_recovered_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/recovered_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/global_dead_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="22dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/stat_widget_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/global_recovered_stat"
+                        app:layout_constraintTop_toBottomOf="@+id/global_stat_title">
+
+                        <TextView
+                            android:id="@+id/global_dead_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingTop="8dp"
+                            android:text="@{AppUtil.format(statisticsData.globalDeaths)}"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/global_dead_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="12dp"
+                            android:text="DEATHS"
+                            android:textColor="@color/pureWhite"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/global_dead_count" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:elevation="1dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/deaths_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
