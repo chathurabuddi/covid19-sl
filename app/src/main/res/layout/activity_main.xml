@@ -22,8 +22,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:contentDescription="Navigation Drawer Icon"
+                android:contentDescription="@string/navigation_drawer_icon"
                 android:elevation="5dp"
+                android:paddingStart="0dp"
                 android:paddingTop="23sp"
                 android:paddingEnd="50dp"
                 android:paddingBottom="23dp"
@@ -72,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Dashboard" />
+                        android:text="@string/navigation_drawer_dashboard" />
 
                     <TextView
                         android:id="@+id/menu_item_symptoms"
@@ -81,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Symptoms" />
+                        android:text="@string/navigation_drawer_symptoms" />
 
                     <TextView
                         android:id="@+id/menu_item_prevention"
@@ -90,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="Prevention" />
+                        android:text="@string/navigation_drawer_prevention" />
 
                     <TextView
                         android:id="@+id/menu_item_about"
@@ -99,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="About" />
+                        android:text="@string/navigation_drawer_about" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

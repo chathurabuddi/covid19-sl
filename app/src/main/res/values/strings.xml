@@ -1,11 +1,52 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">COVID-19 SL</string>
 
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_icon">Navigation Drawer Icon</string>
     <string name="navigation_drawer_open">Open Navigation Panel</string>
     <string name="navigation_drawer_close">Close Navigation Panel</string>
+    <string name="navigation_drawer_dashboard">Dashboard</string>
+    <string name="navigation_drawer_symptoms">Symptoms</string>
+    <string name="navigation_drawer_prevention">Prevention</string>
+    <string name="navigation_drawer_about">About</string>
 
-    <string name="dashboard">Dashboard</string>
-    <string name="about">About</string>
+    <!-- Dashboard Image Content Descriptions -->
+    <string name="dashboard_masked_people">Masked People</string>
+    <string name="dashboard_symptoms_button_background">Symptoms Button Background</string>
+    <string name="dashboard_prevention_button_background">Prevention Button Background</string>
+    <string name="dashboard_curved_background">Curved Background</string>
+    <string name="dashboard_local_active_count_backgrund">Local Active Count Backgrund</string>
+    <string name="dashboard_local_recovered_count_background">Local Recovered Count Background</string>
+    <string name="dashboard_local_dead_count_background">Local Dead Count Background</string>
+    <string name="dashboard_local_total_count_background">Local Total Count Background</string>
+    <string name="dashboard_local_new_count_background">Local New Count Background</string>
+    <string name="dashboard_local_new_deaths_count_background">Local New Deaths Count Background</string>
+    <string name="dashboard_global_active_count_background">Global Active Count Background</string>
+    <string name="dashboard_global_recovered_count_background">Global Recovered Count Background</string>
+    <string name="dashboard_global_dead_count_background">Global Dead Count Background</string>
+
+    <!-- Dashboard Visible Text Values -->
+    <string name="dashboard_title_srilanka">SRILANKA</string>
+    <string name="dashboard_title_coronavirus">CORONAVIRUS</string>
+    <string name="dashboard_title_dashboard">DASHBOARD</string>
+    <string name="dashboard_btn_symptoms">SYMPTOMS</string>
+    <string name="dashboard_btn_prevention">PREVENTION</string>
+    <string name="dashboard_statistics">STATISTICS</string>
+    <string name="dashboard_local_statistics">LOCAL STATISTICS</string>
+    <string name="dashboard_active">ACTIVE</string>
+    <string name="dashboard_recovered">RECOVERED</string>
+    <string name="dashboard_deaths">DEATHS</string>
+    <string name="dashboard_total">TOTAL</string>
+    <string name="dashboard_new_cases">NEW CASES</string>
+    <string name="dashboard_new_deaths">NEW DEATHS</string>
+    <string name="dashboard_global_statistics">GLOBAL STATISTICS</string>
+
+    <!-- Symptoms Image Content Descriptions -->
+    <string name="symptoms_image_description">Image of a Person with Covid-19 Symptoms</string>
+
+    <!-- Symptoms Visible Text Values -->
+    <string name="symptoms_title">SYMPTOMS</string>
     <string name="symptoms_description">
         The Coronavirus pandemic has erupted in Sri Lanka and here are the symptoms one should look
         out for if they suspect they have contacted the disease.\n\n
@@ -32,7 +73,27 @@
         \nCall 1999 hotline for medical and other advice regarding Covid-19.\n
         \nCall 1990 for ambulance facilities in case of an emergency.
     </string>
-    <string name="workplace_prevention_description">
+
+    <!-- Prevention Image Content Descriptions -->
+    <string name="prevention_image_description">Ready to Prevent from Covid-19 Family</string>
+    <string name="prevention_wash_hands_icon">Wash Hands Icon</string>
+    <string name="prevention_wear_a_face_mask_icon">Wear a Face Mask Icon</string>
+    <string name="prevention_cover_coughs_icon">Cover Coughs Icon</string>
+    <string name="prevention_maintain_safe_distance_icon">Maintain Safe Distance Icon</string>
+    <string name="prevention_stay_home_icon">Stay Home Icon</string>
+    <string name="prevention_avoid_crowded_places_icon">Avoid Crowded Places Icon</string>
+
+    <!-- Prevention Visible Text Values -->
+    <string name="prevention_title">PREVENTION</string>
+    <string name="prevention_basic_preventive_measures">BASIC PREVENTIVE MEASURES</string>
+    <string name="prevention_wash_your_hands_often">Wash Your\nHands Often</string>
+    <string name="prevention_wear_a_face_mask">Wear a\nFace Mask</string>
+    <string name="prevention_cover_coughs_and_sneezes">Cover Coughs\nand Sneezes</string>
+    <string name="prevention_maintain_a_safe_distance">Maintain a\nSafe Distance</string>
+    <string name="prevention_stay_at_home">Stay at\nHome</string>
+    <string name="prevention_avoid_crowded_places">Avoid Crowded\nPlaces</string>
+    <string name="prevention_prevention_at_workplace">PREVENTION AT WORKPLACE</string>
+    <string name="prevention_at_workplace_description">
         We spend more time at work places. So we need to care more about how to protect places that
         work against COVID-19. Follow these instructions to keep your work safe.\n
         \nIf anyone shows light symptoms such as fever, cough or cold, advise him not to go to work
@@ -46,5 +107,19 @@
         \nIf you reduce the chance to spread the corona virus at your workplace, you may also reduce
         the chance of immune to your beloved family members.\n
     </string>
+
+    <!-- About Image Content Descriptions -->
+    <string name="about_image_description">App Logo and Name</string>
+
+    <!-- About Visible Text Values -->
+    <string name="about_title">ABOUT</string>
+    <string name="about_copyright_chathurabuddi">(c) chathurabuddi</string>
+    <string name="about_designed_and_developed_by">Designed and Developed By</string>
+    <string name="about_chathura_buddhika">CHATHURA BUDDHIKA</string>
+    <string name="about_live_data_fetched_from">Live Data Fetched From</string>
+    <string name="about_health_promotion_bureau_sri_lanka">HEALTH PROMOTION BUREAU, SRI LANKA</string>
+    <string name="about_app_icon_and_vector_art">App Icon and Vector Art</string>
+    <string name="about_https_www_freepik_com">https://www.freepik.com</string>
+    <string name="about_btn_report_a_bug">Report a Bug</string>
 
 </resources>
