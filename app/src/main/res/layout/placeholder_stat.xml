@@ -5,76 +5,133 @@
     android:elevation="4dp">
 
     <View
-        android:id="@+id/local_stat_shimmer"
+        android:id="@+id/local_stat_placeholder"
         android:layout_width="130sp"
         android:layout_height="16dp"
-        android:background="@color/navyBlue"
         android:layout_marginStart="22dp"
+        android:background="@color/navyBlue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
     </View>
 
-    <LinearLayout
-        android:id="@+id/local_row_one_shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:elevation="4dp"
+    <View
+        android:id="@+id/placeholder_1"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="5dp"
-        android:layout_marginHorizontal="18dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/local_stat_shimmer"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/local_two_one_shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:elevation="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder"/>
+    <View
+        android:id="@+id/placeholder_2"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="4dp"
         android:layout_marginTop="5dp"
-        android:layout_marginHorizontal="18dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/local_row_one_shimmer"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-
-    </LinearLayout>
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_3"
+        app:layout_constraintStart_toEndOf="@id/placeholder_1"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder"/>
+    <View
+        android:id="@+id/placeholder_3"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="22dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/placeholder_2"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder"/>
 
     <View
-        android:id="@+id/global_stat_shimmer"
+        android:id="@+id/placeholder_4"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeholder_1"/>
+    <View
+        android:id="@+id/placeholder_5"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_6"
+        app:layout_constraintStart_toEndOf="@id/placeholder_4"
+        app:layout_constraintTop_toBottomOf="@id/placeholder_2"/>
+    <View
+        android:id="@+id/placeholder_6"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="22dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/placeholder_5"
+        app:layout_constraintTop_toBottomOf="@id/placeholder_3"/>
+
+    <View
+        android:id="@+id/global_stat_placeholder"
         android:layout_width="135sp"
         android:layout_height="16dp"
         android:background="@color/navyBlue"
         android:layout_marginStart="22dp"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/local_two_one_shimmer" >
+        app:layout_constraintTop_toBottomOf="@id/placeholder_4" >
     </View>
 
-    <LinearLayout
-        android:id="@+id/global_row_one_shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:elevation="4dp"
+    <View
+        android:id="@+id/placeholder_7"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="5dp"
-        android:layout_marginHorizontal="18dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/global_stat_shimmer"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-        <include layout="@layout/placeholder_stat_box" />
-
-    </LinearLayout>
+        android:layout_marginEnd="4dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder"/>
+    <View
+        android:id="@+id/placeholder_8"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_9"
+        app:layout_constraintStart_toEndOf="@id/placeholder_7"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder"/>
+    <View
+        android:id="@+id/placeholder_9"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="22dp"
+        android:background="@color/navyBlue"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/placeholder_8"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
