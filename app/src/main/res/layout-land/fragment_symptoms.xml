@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skyBlue"
+    tools:context=".fragment.SymptomsFragment">
+
+    <TextView
+        android:id="@+id/symptoms_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:paddingTop="18sp"
+        android:text="@string/symptoms_title"
+        android:textColor="@color/midnightBlue"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/symptoms_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:contentDescription="@string/symptoms_image_description"
+        android:src="@drawable/symptoms_art"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottom_canvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/bottom_canves_bk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/navyBlue"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/back_arrow_icon"
+        app:elevation="2dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@id/bottom_canvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottom_canvas"
+        app:rippleColor="@color/midnightBlue" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="always"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="25dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_canvas"
+        app:layout_constraintEnd_toEndOf="@id/bottom_canvas"
+        app:layout_constraintStart_toStartOf="@+id/bottom_canvas"
+        app:layout_constraintTop_toTopOf="@id/bottom_canvas">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/symptoms_description"
+            android:textColor="@color/pureWhite"
+            android:textSize="12sp" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
