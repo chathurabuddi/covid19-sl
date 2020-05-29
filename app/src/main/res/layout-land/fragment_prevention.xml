@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skyBlue"
+    tools:context=".fragment.PreventionFragment">
+
+    <TextView
+        android:id="@+id/prevention_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:paddingTop="18sp"
+        android:text="@string/prevention_title"
+        android:textColor="@color/midnightBlue"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/prevention_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:contentDescription="@string/prevention_image_description"
+        android:src="@drawable/prevention_art"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottom_canvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/bottom_canves_bk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/navyBlue"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/back_arrow_icon"
+        app:elevation="2dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@id/bottom_canvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottom_canvas"
+        app:rippleColor="@color/midnightBlue" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="always"
+        android:paddingVertical="25dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_canvas"
+        app:layout_constraintEnd_toEndOf="@id/bottom_canvas"
+        app:layout_constraintStart_toStartOf="@+id/bottom_canvas"
+        app:layout_constraintTop_toTopOf="@id/bottom_canvas">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/prevention_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="start|top"
+                android:text="@string/prevention_basic_preventive_measures"
+                android:textAlignment="textStart"
+                android:textColor="@color/pureWhite"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <HorizontalScrollView
+                android:id="@+id/prevention_scroll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/midnightBlue"
+                android:overScrollMode="always"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prevention_description">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/content_scroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="40dp">
+
+                    <ImageView
+                        android:id="@+id/wash_hands_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/prevention_wash_hands_icon"
+                        android:src="@drawable/wash_hands"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/wash_hands_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_wash_your_hands_often"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/wash_hands_img"
+                        app:layout_constraintStart_toStartOf="@+id/wash_hands_img"
+                        app:layout_constraintTop_toBottomOf="@+id/wash_hands_img" />
+
+                    <ImageView
+                        android:id="@+id/wear_mask_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:contentDescription="@string/prevention_wear_a_face_mask_icon"
+                        android:src="@drawable/wear_mask"
+                        app:layout_constraintStart_toEndOf="@+id/wash_hands_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/wear_mask_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_wear_a_face_mask"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/wear_mask_img"
+                        app:layout_constraintStart_toStartOf="@+id/wear_mask_img"
+                        app:layout_constraintTop_toBottomOf="@+id/wear_mask_img" />
+
+                    <ImageView
+                        android:id="@+id/cover_cough_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:contentDescription="@string/prevention_cover_coughs_icon"
+                        android:src="@drawable/cover_coughs"
+                        app:layout_constraintStart_toEndOf="@+id/wear_mask_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/cover_cough_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_cover_coughs_and_sneezes"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/cover_cough_img"
+                        app:layout_constraintStart_toStartOf="@+id/cover_cough_img"
+                        app:layout_constraintTop_toBottomOf="@+id/cover_cough_img" />
+
+                    <ImageView
+                        android:id="@+id/safe_distance_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:contentDescription="@string/prevention_maintain_safe_distance_icon"
+                        android:src="@drawable/maintain_distance"
+                        app:layout_constraintStart_toEndOf="@id/cover_cough_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/safe_distance_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_maintain_a_safe_distance"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/safe_distance_img"
+                        app:layout_constraintStart_toStartOf="@+id/safe_distance_img"
+                        app:layout_constraintTop_toBottomOf="@+id/safe_distance_img" />
+
+                    <ImageView
+                        android:id="@+id/stay_home_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:contentDescription="@string/prevention_stay_home_icon"
+                        android:src="@drawable/stay_home"
+                        app:layout_constraintStart_toEndOf="@+id/safe_distance_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stay_home_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_stay_at_home"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/stay_home_img"
+                        app:layout_constraintStart_toStartOf="@+id/stay_home_img"
+                        app:layout_constraintTop_toBottomOf="@+id/stay_home_img" />
+
+                    <ImageView
+                        android:id="@+id/avoid_crowded_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:contentDescription="@string/prevention_avoid_crowded_places_icon"
+                        android:src="@drawable/avoid_crowded"
+                        app:layout_constraintStart_toEndOf="@+id/stay_home_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/avoid_crowded_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/prevention_avoid_crowded_places"
+                        android:textAlignment="center"
+                        android:textColor="@color/pureWhite"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/avoid_crowded_img"
+                        app:layout_constraintStart_toStartOf="@+id/avoid_crowded_img"
+                        app:layout_constraintTop_toBottomOf="@+id/avoid_crowded_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/workplace_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="start|top"
+                android:text="@string/prevention_prevention_at_workplace"
+                android:textAlignment="textStart"
+                android:textColor="@color/pureWhite"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prevention_scroll" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/prevention_at_workplace_description"
+                android:textColor="@color/pureWhite"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/workplace_title" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
