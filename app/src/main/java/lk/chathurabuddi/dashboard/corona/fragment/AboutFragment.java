@@ -1,5 +1,7 @@
 package lk.chathurabuddi.dashboard.corona.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 
 import lk.chathurabuddi.dashboard.corona.BuildConfig;
 import lk.chathurabuddi.dashboard.corona.R;
+import lk.chathurabuddi.dashboard.corona.util.DeviceInformation;
 
 public class AboutFragment extends Fragment {
 
@@ -41,6 +44,18 @@ public class AboutFragment extends Fragment {
                     ScreenFragment.DASHBOARD.name()
                 ).commit();
             }
+        });
+
+        view.findViewById(R.id.btn_report_bug).setOnClickListener(v -> {
+            final String mailSubject = "[Bug Report] COVID19-SL";
+            final String deviceInfo = DeviceInformation.extract();
+            Intent intent = new Intent(
+                Intent.ACTION_SENDTO,
+                Uri.parse("mailto:contact@chathurabuddi.lk?subject="+mailSubject+"&body="+deviceInfo)
+            );
+            intent.putExtra(Intent.EXTRA_SUBJECT, mailSubject);
+            intent.putExtra(Intent.EXTRA_TEXT, deviceInfo);
+            startActivity(Intent.createChooser(intent, "Choose an Email Client"));
         });
 
         ((TextView)view.findViewById(R.id.version_tag)).setText(BuildConfig.VERSION_NAME);
