@@ -223,6 +223,7 @@
                     app:layout_constraintEnd_toEndOf="@id/stat_container"
                     app:layout_constraintStart_toStartOf="@id/stat_container"
                     app:layout_constraintTop_toTopOf="@id/stat_container">
+
                     <include layout="@layout/placeholder_stat" />
                 </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -256,7 +257,6 @@
                         android:layout_marginStart="22dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="4dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_orange"
                         android:clickable="true"
                         android:focusable="true"
@@ -312,7 +312,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="4dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_green"
                         android:clickable="true"
                         android:focusable="true"
@@ -368,7 +367,6 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="22dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_red"
                         android:clickable="true"
                         android:focusable="true"
@@ -424,7 +422,6 @@
                         android:layout_marginStart="22dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="4dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_blue"
                         android:clickable="true"
                         android:focusable="true"
@@ -479,7 +476,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="4dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_blue"
                         android:clickable="true"
                         android:focusable="true"
@@ -535,7 +531,6 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="22dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_blue"
                         android:clickable="true"
                         android:focusable="true"
@@ -607,7 +602,6 @@
                         android:layout_marginStart="22dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="4dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_orange"
                         android:clickable="true"
                         android:focusable="true"
@@ -653,7 +647,7 @@
                             android:scaleType="fitXY"
                             android:src="@drawable/active_icon"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"/>
+                            app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -662,7 +656,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="4dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_green"
                         android:clickable="true"
                         android:focusable="true"
@@ -718,7 +711,6 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="22dp"
-                        android:layout_weight="1"
                         android:background="@drawable/stat_widget_red"
                         android:clickable="true"
                         android:focusable="true"
