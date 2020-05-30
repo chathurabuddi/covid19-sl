@@ -1,0 +1,113 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:elevation="4dp">
+
+    <View
+        android:id="@+id/local_stat_placeholder"
+        android:layout_width="130sp"
+        android:layout_height="16dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/placeholder_1"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_2"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_1"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_3"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_2"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_4"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_3"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_5"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_4"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_6"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_5"
+        app:layout_constraintTop_toBottomOf="@id/local_stat_placeholder" />
+
+    <View
+        android:id="@+id/global_stat_placeholder"
+        android:layout_width="135sp"
+        android:layout_height="16dp"
+        android:layout_marginTop="23dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeholder_1" />
+
+    <View
+        android:id="@+id/placeholder_7"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_8"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_7"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder" />
+
+    <View
+        android:id="@+id/placeholder_9"
+        android:layout_width="120dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/navyBlue"
+        app:layout_constraintStart_toEndOf="@id/placeholder_8"
+        app:layout_constraintTop_toBottomOf="@id/global_stat_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
