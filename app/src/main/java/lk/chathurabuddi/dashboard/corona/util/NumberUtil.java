@@ -2,7 +2,7 @@ package lk.chathurabuddi.dashboard.corona.util;
 
 import java.util.Locale;
 
-public class AppUtil {
+public class NumberUtil {
     public static String format(long number) {
         final long startValue = 10000;
         if (number < 0 ? -startValue < number : number < startValue){

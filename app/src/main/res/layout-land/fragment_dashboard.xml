@@ -6,7 +6,7 @@
 
     <data>
         <variable name="statisticsData" type="lk.gov.health.hpb.api.StatisticsData" />
-        <import type="lk.chathurabuddi.dashboard.corona.util.AppUtil" />
+        <import type="lk.chathurabuddi.dashboard.corona.util.NumberUtil" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -284,7 +284,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localActiveCases)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localActiveCases)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -338,7 +338,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localRecovered)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localRecovered)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -391,7 +391,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localDeaths)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localDeaths)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -444,7 +444,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localTotalCases)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localTotalCases)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -497,7 +497,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localNewCases)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localNewCases)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -551,7 +551,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.localNewDeaths)}"
+                                    android:text="@{NumberUtil.format(statisticsData.localNewDeaths)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -641,7 +641,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalTotalCases - statisticsData.globalRecovered - statisticsData.globalDeaths)}"
+                                    android:text="@{NumberUtil.format(statisticsData.globalTotalCases - statisticsData.globalRecovered - statisticsData.globalDeaths)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -694,7 +694,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalRecovered)}"
+                                    android:text="@{NumberUtil.format(statisticsData.globalRecovered)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -747,7 +747,7 @@
                                     android:elevation="2dp"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:paddingTop="8dp"
-                                    android:text="@{AppUtil.format(statisticsData.globalDeaths)}"
+                                    android:text="@{NumberUtil.format(statisticsData.globalDeaths)}"
                                     android:textColor="@color/pureWhite"
                                     android:textSize="18sp"
                                     app:layout_constraintEnd_toEndOf="parent"
