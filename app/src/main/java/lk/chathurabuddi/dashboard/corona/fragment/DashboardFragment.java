@@ -154,9 +154,6 @@ public class DashboardFragment extends Fragment {
 
         binding.statContainer.setVisibility(View.INVISIBLE);
         binding.placeholder.setVisibility(View.VISIBLE);
-
-        ShimmerFrameLayout placeholder = binding.placeholder;
-        placeholder.startShimmerAnimation();
     }
 
     private void stopLoadingAnimations(@NonNull final FragmentDashboardBinding binding) {

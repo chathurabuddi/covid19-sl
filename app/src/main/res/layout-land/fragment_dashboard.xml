@@ -211,7 +211,7 @@
                     android:layout_marginHorizontal="22dp"
                     android:alpha="0.8"
                     android:elevation="5dp"
-                    app:duration="500"
+                    app:shimmer_duration="1000"
                     app:layout_constraintBottom_toBottomOf="@id/stat_container"
                     app:layout_constraintEnd_toEndOf="@id/stat_container"
                     app:layout_constraintStart_toStartOf="@id/stat_container"
