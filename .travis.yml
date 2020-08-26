@@ -1,22 +1,32 @@
 language: android
-jdk: oraclejdk8
 
 android:
   components:
     - platform-tools
     - tools
-
     - build-tools-29.0.3
-
     - android-29
-
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
     - addon-google_apis-google-19
 
-before_install:
-  - yes | sdkmanager "platforms;android-27"
+jobs:
+  include:
+    - stage: "Code Analysis"
+      name: "Sonar Cloud Code Analysis"
+      jdk: openjdk11
+      addons:
+        sonarcloud:
+          organization: "chathurabuddi"
+          token:
+            secure: "Rnl/O0n7jazPzogGdKb6ycqlntzIFCxV1HvS7AgzbGTS8Lnc3sCbjGMS7DkImwJH5g+nRGRIk5vVjYb84SJtsb7gm31UUVbOO5qOAilwLYgO8OemZ1CHVYRUCxPqDIwAca8SCczhj26U0FpW2jYq4lJB0YelefYzDGQimol96zYTk7d3Ta0oVQW2YdE7QiwznQHS93jcsqk+h4+y/lLjMOyzAv0F9EJJ/YypudRmMBttHLQXPjeRL5gxD1lgytcP2cLgwPKp886dl3eS2YiihpHeXW1tMN52fTNoBJv+Rqex7pMFHWorDJsBem0U1QF/vhUIZevuZkj7CZ9WyM+4ZG250TVcdoTvokuxvE2iHx9nwCM0VssJY4NZtyVmpw1MmBbD7PRSf16vJfdGpzQaDdt9G8aca6d8lBhhmkm6zmMc4m91aIrHB2xMr0LQy2MH6BlmKrLwc4+Xa565UG6OzOyxeklfXFsuWsXz6CblVnnkhPcEYj0MEn7GVaSKcvt0C6DM6o2dISkAFLwq68OMgdaJtYRRry/kG/v5RDufzvv9F7xvuwsN538vICrGu0YWUCyUcbbUALAIm++YCQ3PT91ijxASqLxWSoBhEP2JhCJnPi7j+8araZ6+CPY7xE+2wcVVXFcVv3lwVFIvpHSd9t+SMs3rJx1ZlRiXlW1nDH0="
+      script: ./gradlew sonarqube
 
-script:
-    - ./gradlew assembleDebug
+    - stage: "Build"
+      name: "Build the Project"
+      jdk: openjdk8
+
+      before_install:
+        - yes | sdkmanager "platforms;android-29"
+      script: ./gradlew assembleDebug
