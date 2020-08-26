@@ -1,3 +1,4 @@
+if: (type = push AND branch IN (master, develop)) OR type = pull_request
 language: android
 
 android:
@@ -26,7 +27,6 @@ jobs:
     - stage: "Build"
       name: "Build the Project"
       jdk: openjdk8
-
       before_install:
         - yes | sdkmanager "platforms;android-29"
       script: ./gradlew assembleDebug
