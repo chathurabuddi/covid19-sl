@@ -30,3 +30,22 @@ jobs:
       before_install:
         - yes | sdkmanager "platforms;android-29"
       script: ./gradlew assembleDebug
+
+    - stage: "Release"
+      name: "Release the artifacts to GitHUb Releases"
+      script: echo "Release the artifacts to GitHUb Releases"
+      if: type = push AND branch = master AND tag IS present
+      deploy:
+        provider: releases
+        api-key: $GITHUB_API_KEY
+        file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/debug/app-debug.apk
+        skip_cleanup: true
+        name: $TRAVIS_TAG
+        body: Automated release build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) by Travis CI on $(date +'%F %T %Z').
+        overwrite: true
+        target_commitish: $TRAVIS_COMMIT
+        on:
+          branch: master
+          tags: true
+      after_deploy:
+        - rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
