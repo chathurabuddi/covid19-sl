@@ -1,3 +1,4 @@
+if: (type = push AND (branch IN (master, develop)) OR type = pull_request
 language: android
 
 android:
@@ -22,7 +23,6 @@ jobs:
           token:
             secure: "Rnl/O0n7jazPzogGdKb6ycqlntzIFCxV1HvS7AgzbGTS8Lnc3sCbjGMS7DkImwJH5g+nRGRIk5vVjYb84SJtsb7gm31UUVbOO5qOAilwLYgO8OemZ1CHVYRUCxPqDIwAca8SCczhj26U0FpW2jYq4lJB0YelefYzDGQimol96zYTk7d3Ta0oVQW2YdE7QiwznQHS93jcsqk+h4+y/lLjMOyzAv0F9EJJ/YypudRmMBttHLQXPjeRL5gxD1lgytcP2cLgwPKp886dl3eS2YiihpHeXW1tMN52fTNoBJv+Rqex7pMFHWorDJsBem0U1QF/vhUIZevuZkj7CZ9WyM+4ZG250TVcdoTvokuxvE2iHx9nwCM0VssJY4NZtyVmpw1MmBbD7PRSf16vJfdGpzQaDdt9G8aca6d8lBhhmkm6zmMc4m91aIrHB2xMr0LQy2MH6BlmKrLwc4+Xa565UG6OzOyxeklfXFsuWsXz6CblVnnkhPcEYj0MEn7GVaSKcvt0C6DM6o2dISkAFLwq68OMgdaJtYRRry/kG/v5RDufzvv9F7xvuwsN538vICrGu0YWUCyUcbbUALAIm++YCQ3PT91ijxASqLxWSoBhEP2JhCJnPi7j+8araZ6+CPY7xE+2wcVVXFcVv3lwVFIvpHSd9t+SMs3rJx1ZlRiXlW1nDH0="
       script: ./gradlew sonarqube
-      if: (type = push AND (branch IN (master, develop)) OR type = pull_request
 
     - stage: "Build"
       name: "Build the Project"
@@ -30,7 +30,6 @@ jobs:
       before_install:
         - yes | sdkmanager "platforms;android-29"
       script: ./gradlew assembleDebug
-      if: (type = push AND (branch IN (master, develop)) OR type = pull_request
 
     - stage: "Release"
       name: "Release the artifacts to GitHUb Releases"
