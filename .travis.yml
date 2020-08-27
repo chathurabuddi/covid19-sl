@@ -1,4 +1,4 @@
-if: (type = push AND branch IN (master, develop)) OR type = push AND tag IS present OR type = pull_request
+if: (type = push AND branch IN (master, develop)) OR (type = push AND tag IS present) OR type = pull_request
 language: android
 
 android:
