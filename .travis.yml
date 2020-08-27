@@ -34,7 +34,10 @@ jobs:
 
     - stage: "Release"
       name: "Release the artifacts to GitHUb Releases"
-      script: echo "Release the artifacts to GitHUb Releases"
+      jdk: openjdk8
+      before_install:
+        - yes | sdkmanager "platforms;android-29"
+      script: ./gradlew assembleDebug
       if: type = push AND tag IS present
       deploy:
         provider: releases
