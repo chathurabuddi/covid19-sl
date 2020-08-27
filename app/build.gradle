@@ -36,6 +36,7 @@ android {
 sonarqube {
     properties {
         property "sonar.projectKey", "chathurabuddi_covid19-sl"
+        property "sonar.projectName", "covid19-sl"
     }
 }
 
