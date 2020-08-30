@@ -7,7 +7,7 @@
 
 Stay alert on the official and updated information on the COVID-19 outbreak from the Government of Sri Lanka and World Health Organization.
 
-![](https://repository-images.githubusercontent.com/264604305/f6074a80-aa50-11ea-945d-78f612d0d3ff)
+<img src="https://repository-images.githubusercontent.com/264604305/f6074a80-aa50-11ea-945d-78f612d0d3ff" width="700px"/>
 
 ### Installation & Usage  
 You can find the latest releases on the [release page](https://github.com/chathurabuddi/covid19-sl/releases). Just download the apk file and install it on your android device.
